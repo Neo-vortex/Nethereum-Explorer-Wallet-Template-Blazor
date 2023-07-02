@@ -89,8 +89,8 @@
         {
             await GetRpcEndpoints();
             this.StateHasChanged();
-            //Defaulting to optimism as it does not require a projectId
-            Web3UrlViewModel.Url = "https://mainnet.optimism.io";
+            
+            Web3UrlViewModel.Url = "https://chainnova-scf-chain.darkube.app";
         }
     }
 
@@ -200,13 +200,8 @@
 
     public List<string> DefaultRpcEndPoints = new List<string>(new []
         {
-        "https://mainnet.infura.io/v3/<Please use your INFURA ProjectId>",
-        "https://mainnet.optimism.io",
-        "https://kovan.infura.io/v3/<Please use your INFURA ProjectId>",
-        "https://ropsten.infura.io/v3/<Please use your INFURA ProjectId>",
-        "https://rinkeby.infura.io/v3/<Please use your INFURA ProjectId>",
-        "http://127.0.0.1:8545",
-        "https://kovan.optimism.io"
+            "https://chainnova-scf-chain.darkube.app",
+            "https://development-chainnova-scf-chain.darkube.app"
         });
    
     protected void UrlChange(ChangeEventArgs urlChangeEventArgs)
