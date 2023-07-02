@@ -14,7 +14,7 @@ RUN dotnet publish -c Release -o out
 # Build runtime image
 FROM mcr.hamdocker.ir/dotnet/aspnet:7.0
 WORKDIR /App
-COPY --from=build-env /App/out .
+COPY --from=build-env /App/NethereumExplorer/out .
 ENTRYPOINT ["dotnet", "NethereumExplorer.ClientWasm.dll"]
 EXPOSE 5000
 EXPOSE 80
