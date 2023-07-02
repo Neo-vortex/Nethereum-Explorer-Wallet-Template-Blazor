@@ -15,8 +15,9 @@ RUN dotnet publish -c Release -o out
 FROM mcr.hamdocker.ir/dotnet/aspnet:7.0
 WORKDIR /App
 COPY --from=build-env /App/NethereumExplorer.ClientWasm/out .
-ENTRYPOINT ["dotnet", "NethereumExplorer.ClientWasm.dll"]
-EXPOSE 5000
-EXPOSE 80
-EXPOSE 443
+RUN apt update
+RUN apt install python3 -y
+WORKDIR ./wwwroot
+ENTRYPOINT ["python3", "-m", "http.server"]
+EXPOSE 8000
 
