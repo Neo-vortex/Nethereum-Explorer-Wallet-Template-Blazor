@@ -94,7 +94,7 @@
             await GetAccounts();
             this.StateHasChanged();
 
-            var web3 = new Web3("https://mainnet.infura.io/v3/ddd5ed15e8d443e295b696c0d07c8b02");
+            var web3 = new Web3("https://chainnova-scf-chain.darkube.app");
             _tokenBalanceService = new TokenBalanceService(new HttpClient(), web3);
         }
     }
